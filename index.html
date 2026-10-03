@@ -1,31 +1,221 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Tech Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars | Computer Science Portfolio</title>
     <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0284c7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Hero / Header Section */
+        header {
             text-align: center;
-            padding: 50px;
+            padding: 40px 20px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
         }
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .bio {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+        }
+
+        /* Buttons & Links */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
             display: inline-block;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: var(--accent);
+            color: #0f172a;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s ease;
         }
-        h1 { color: #333; }
-        p { color: #666; }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            color: #ffffff;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: #0f172a;
+        }
+
+        /* Section Titles */
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        /* Grid / Cards for Projects & Skills */
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #334155;
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <h1>Hello, I'm Building a Tech Portfolio!</h1>
-        <p>This is my very first webpage, built and launched from scratch.</p>
-        <p>I am learning how to deploy software to the internet to apply for Computer Science roles.</p>
+    <div class="container">
+        <!-- Hero Header -->
+        <header>
+            <h1>Hello, I'm Cars 👋</h1>
+            <p class="subtitle">Aspiring Software Engineer & Computer Science Student</p>
+            <p class="bio">
+                Building practical software projects, exploring web development, and preparing for entry-level tech roles.
+            </p>
+            <div class="btn-container">
+                <a href="https://github.com/cars12" target="_blank" class="btn">GitHub Profile</a>
+                <a href="#projects" class="btn btn-outline">View Projects</a>
+            </div>
+        </header>
+
+        <!-- About & Skills Section -->
+        <section id="about">
+            <h2>Technical Skills</h2>
+            <div class="card">
+                <div class="tags">
+                    <span class="tag">HTML5 / CSS3</span>
+                    <span class="tag">Git & GitHub</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">VS Code</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+
+            <!-- Project 1 -->
+            <div class="card">
+                <h3>Personal Developer Portfolio</h3>
+                <p>
+                    A clean, responsive static website designed to display software engineering projects and technical skills. Built from scratch and deployed on GitHub Pages.
+                </p>
+                <div class="tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS Flexbox</span>
+                    <span class="tag">GitHub Pages</span>
+                </div>
+            </div>
+
+            <!-- Project 2 (Placeholder for your next build) -->
+            <div class="card">
+                <h3>Upcoming Project...</h3>
+                <p>
+                    Currently building my next project (e.g., a Python automation script or dynamic JavaScript web application). Check back soon!
+                </p>
+                <div class="tags">
+                    <span class="tag">In Progress</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 Cars. Built and hosted on GitHub Pages.</p>
+        </footer>
     </div>
 
 </body>
