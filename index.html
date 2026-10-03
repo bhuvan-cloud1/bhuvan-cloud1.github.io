@@ -1,221 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cars | Computer Science Portfolio</title>
+    <title>Cars | Software & App Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#0b0f19',
+                            surface: '#111827',
+                            card: '#1f2937',
+                            accent: '#38bdf8',
+                            hover: '#0284c7'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #0284c7;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 20px;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px 0;
+        .glass-nav {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(12px);
         }
-
-        /* Hero / Header Section */
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-            margin-bottom: 30px;
+        .glass-card {
+            background: rgba(31, 41, 55, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-
-        h1 {
-            font-size: 2.2rem;
-            color: var(--text-main);
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            color: var(--accent);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .bio {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 20px auto;
-        }
-
-        /* Buttons & Links */
-        .btn-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: #0f172a;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.2s ease;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-hover);
-            color: #ffffff;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--accent);
-            border: 2px solid var(--accent);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--accent);
-            color: #0f172a;
-        }
-
-        /* Section Titles */
-        section {
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            border-bottom: 2px solid var(--card-bg);
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-            color: var(--accent);
-        }
-
-        /* Grid / Cards for Projects & Skills */
-        .card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            margin-bottom: 15px;
-        }
-
-        .tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            background: #334155;
-            color: var(--accent);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-2px);
         }
     </style>
 </head>
-<body>
+<body class="antialiased text-slate-200 min-h-screen">
 
-    <div class="container">
-        <!-- Hero Header -->
-        <header>
-            <h1>Hello, I'm Cars 👋</h1>
-            <p class="subtitle">Aspiring Software Engineer & Computer Science Student</p>
-            <p class="bio">
-                Building practical software projects, exploring web development, and preparing for entry-level tech roles.
-            </p>
-            <div class="btn-container">
-                <a href="https://github.com/cars12" target="_blank" class="btn">GitHub Profile</a>
-                <a href="#projects" class="btn btn-outline">View Projects</a>
+    <!-- Sticky Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-800">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-mono text-lg font-bold text-white flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> cars12
+            </a>
+            <div class="flex gap-6 text-sm font-medium text-slate-400">
+                <a href="#work" class="hover:text-sky-400 transition-colors">Work</a>
+                <a href="#skills" class="hover:text-sky-400 transition-colors">Skills</a>
+                <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
+                <a href="https://github.com/cars12" target="_blank" class="text-sky-400 hover:text-sky-300">GitHub ↗</a>
             </div>
-        </header>
+        </div>
+    </nav>
 
-        <!-- About & Skills Section -->
-        <section id="about">
-            <h2>Technical Skills</h2>
-            <div class="card">
-                <div class="tags">
-                    <span class="tag">HTML5 / CSS3</span>
-                    <span class="tag">Git & GitHub</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">VS Code</span>
-                </div>
+    <div class="max-w-5xl mx-auto px-6 pt-32 pb-20">
+
+        <!-- Hero Banner -->
+        <section class="mb-24">
+            <p class="text-xs font-mono text-sky-400 uppercase tracking-widest mb-3">Portfolio & Applied Work</p>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+                Designing, building, and deploying software.
+            </h1>
+            <p class="text-lg text-slate-400 max-w-2xl leading-relaxed mb-8">
+                Entry-level Computer Science developer focused on building clean web applications, software utilities, and exploring full-stack engineering.
+            </p>
+            <div class="flex gap-4">
+                <a href="#work" class="px-6 py-3 rounded-xl font-semibold bg-sky-500 text-slate-950 hover:bg-sky-400 transition-all shadow-lg shadow-sky-500/10">
+                    Browse Projects
+                </a>
+                <a href="https://github.com/cars12" target="_blank" class="px-6 py-3 rounded-xl font-semibold bg-slate-900 border border-slate-800 hover:bg-slate-800 transition-all text-white">
+                    GitHub Profile
+                </a>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>Featured Projects</h2>
-
-            <!-- Project 1 -->
-            <div class="card">
-                <h3>Personal Developer Portfolio</h3>
-                <p>
-                    A clean, responsive static website designed to display software engineering projects and technical skills. Built from scratch and deployed on GitHub Pages.
-                </p>
-                <div class="tags">
-                    <span class="tag">HTML5</span>
-                    <span class="tag">CSS Flexbox</span>
-                    <span class="tag">GitHub Pages</span>
+        <!-- Work / Projects Section -->
+        <section id="work" class="mb-24">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-white">Featured Projects</h2>
+                    <p class="text-sm text-slate-400">Selected apps and practical software builds</p>
                 </div>
             </div>
 
-            <!-- Project 2 (Placeholder for your next build) -->
-            <div class="card">
-                <h3>Upcoming Project...</h3>
-                <p>
-                    Currently building my next project (e.g., a Python automation script or dynamic JavaScript web application). Check back soon!
-                </p>
-                <div class="tags">
-                    <span class="tag">In Progress</span>
+            <!-- Project Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Project 1 -->
+                <div class="glass-card p-6 rounded-2xl transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white">Developer Portfolio Site</h3>
+                            <span class="text-xs font-mono text-emerald-400 bg-emerald-400/10 px-2.5 py-1 rounded-full border border-emerald-400/20">Deployed</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            A fast, responsive developer site built with HTML and Tailwind CSS, deployed automatically via GitHub Pages.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex gap-2 flex-wrap mb-6">
+                            <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-sky-400">HTML5</span>
+                            <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-sky-400">Tailwind CSS</span>
+                            <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-sky-400">GitHub Pages</span>
+                        </div>
+                        <a href="https://github.com/cars12/cars12.github.io" target="_blank" class="inline-flex items-center gap-1 text-sm font-semibold text-sky-400 hover:text-sky-300">
+                            Source Code ↗
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Placeholder) -->
+                <div class="glass-card p-6 rounded-2xl transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white">Full-Stack Application</h3>
+                            <span class="text-xs font-mono text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-full border border-amber-400/20">In Progress</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            An upcoming web app with database integration and RESTful API endpoints.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex gap-2 flex-wrap mb-6">
+                            <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-400">Python / Node.js</span>
+                            <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-400">SQL / Mongo</span>
+                        </div>
+                        <span class="text-sm font-mono text-slate-500">Coming Soon</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="mb-24">
+            <h2 class="text-2xl font-bold text-white mb-6">Toolbox & Core Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <div class="glass-card p-5 rounded-xl">
+                    <h4 class="font-semibold text-white mb-1">Languages</h4>
+                    <p class="text-xs text-slate-400">Python, JavaScript, HTML5, CSS3</p>
+                </div>
+                <div class="glass-card p-5 rounded-xl">
+                    <h4 class="font-semibold text-white mb-1">Tools & Version Control</h4>
+                    <p class="text-xs text-slate-400">Git, GitHub, VS Code, Linux</p>
+                </div>
+                <div class="glass-card p-5 rounded-xl">
+                    <h4 class="font-semibold text-white mb-1">Deployment Platforms</h4>
+                    <p class="text-xs text-slate-400">GitHub Pages, Vercel, Netlify</p>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer>
-            <p>© 2026 Cars. Built and hosted on GitHub Pages.</p>
+        <footer class="pt-8 border-t border-slate-800 text-center sm:text-left sm:flex sm:justify-between text-xs text-slate-500">
+            <p>© 2026 Cars. Hosted on GitHub Pages.</p>
+            <p class="mt-2 sm:mt-0">Built with HTML & Tailwind CSS</p>
         </footer>
+
     </div>
 
 </body>
